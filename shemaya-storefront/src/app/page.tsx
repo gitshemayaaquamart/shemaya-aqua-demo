@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Navbar from "./navbar/Navbar";
+import Navbar from "../components/navbar/Navbar";
 
 export default function Home() {
   return (
