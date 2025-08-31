@@ -46,7 +46,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function NavLinks() {
+export function DesktopNav() {
   return (
     <NavigationMenu viewport={true}>
       <NavigationMenuList>
