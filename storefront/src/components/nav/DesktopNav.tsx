@@ -12,6 +12,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -60,8 +62,34 @@ export function DesktopNav() {
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>
-                <NavigationMenuLink asChild>
-                  <Link href="#">Components</Link>
+                <NavigationMenuLink asChild className="bg-red-300">
+                  <HoverCard openDelay={150} closeDelay={100}>
+                    <HoverCardTrigger className={`${navigationMenuTriggerStyle()} !w-full !p-2`} asChild>
+                      <Link href="#" className="!flex !justify-between !items-center flex-row w-full">
+                        Components
+                        <ChevronRight size={16} />
+                      </Link>
+                    </HoverCardTrigger>
+                    <HoverCardContent align="start" side="right">
+                      <ul className="min-w-full w-max">
+                        <li className="min-w-full w-max">
+                          <Link href="#" className={`${navigationMenuTriggerStyle()} !min-w-full !w-max !text-left flex justify-start items-center`}>
+                            Components
+                          </Link>
+                        </li>
+                        <li className="min-w-full w-max">
+                          <Link href="#" className={`${navigationMenuTriggerStyle()} !min-w-full !w-max  flex justify-start items-center`}>
+                            Components Components
+                          </Link>
+                        </li>
+                        <li className="min-w-full w-max">
+                          <Link href="#" className={`${navigationMenuTriggerStyle()} !min-w-full !w-max !text-left  flex justify-start items-center`}>
+                            Components
+                          </Link>
+                        </li>
+                      </ul>
+                    </HoverCardContent>
+                  </HoverCard>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="#">Documentation</Link>
