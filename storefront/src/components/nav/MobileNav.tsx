@@ -2,6 +2,8 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { Menu } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "@/assets/images/logo.png";
 
 export default function MobileNav() {
   return (
@@ -10,6 +12,9 @@ export default function MobileNav() {
         <Menu size={32} renderingIntent={"Mobile menu trigger"} />
       </SheetTrigger>
       <SheetContent>
+        <SheetTitle className="pt-1">
+          <Image src={logo} alt="Shemaya Aqua (Pvt) Ltd." className="w-14 md:w-22 h-auto" />
+        </SheetTitle>
         <SheetHeader>
           <SheetDescription>
             <Accordion type="single" collapsible>
