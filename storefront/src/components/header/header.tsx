@@ -9,7 +9,7 @@ export default function Header() {
         <VideoPreview />
         <div className="w-full h-full flex flex-col justify-start items-center gap-5 box-border pt-60">
           <p className="text-xl text-center text-white">Shemaya Aqua Mart (Pvt) Ltd.</p>
-          <h1 className="text-center text-5xl 2xl:text-7xl uppercase font-medium text-white leading-22 2xl:leading-28 [-webkit-text-stroke:1px_black] xl:[-webkit-text-stroke:2px_black]">
+          <h1 className="text-center text-5xl 2xl:text-7xl uppercase font-medium text-white leading-22 2xl:leading-28 xl:[-webkit-text-stroke:2px_black]">
             Your one-stop Partner for Shrimp <br />
             <span className="relative">
               Farming Success
