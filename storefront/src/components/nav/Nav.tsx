@@ -6,7 +6,7 @@ import { DesktopNav } from "./DesktopNav";
 import { useEffect, useState } from "react";
 import MobileNav from "./MobileNav";
 import Image from "next/image";
-import logo from "@/assets/images/logo.png";
+import Link from "next/link";
 
 function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false);
@@ -27,8 +27,10 @@ export default function Nav() {
   const isLgUp = useMediaQuery("(min-width: 1024px)");
   return (
     <nav className="w-full lg:container mx-auto py-2.5 flex justify-end items-center gap-2 relative">
-      <div className="w-auto aspect-square flex justify-center items-center sm:absolute z-30 left-0 top-2">
-        <Image src={logo} alt="Shemaya Aqua (Pvt) Ltd." className="w-10 sm:w-16 md:w-22 h-auto" />
+      <div className="w-auto aspect-square flex justify-center items-center absolute z-30 left-0 top-full md:top-4/5 xl:top-1">
+        <Link href="/">
+          <Image src="/images/logo.png" alt="Shemaya Aqua (Pvt) Ltd." width={600} height={600} className="w-16 md:w-22 h-auto" />
+        </Link>
       </div>
       <div className="w-[80%] md:w-auto h-auto flex justify-end items-center gap-1">
         <form action="" className="w-full max-w-full h-auto flex justify-center items-center gap-2">
