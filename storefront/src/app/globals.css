@@ -45,6 +45,7 @@
 }
 
 :root {
+  --active: oklch(79.768% 0.12264 233.237);
   --radius: 0.4rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
