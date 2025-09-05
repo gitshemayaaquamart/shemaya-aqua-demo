@@ -27,11 +27,11 @@ export default function Nav() {
   const isLgUp = useMediaQuery("(min-width: 1024px)");
   return (
     <nav className="w-full lg:container mx-auto py-2.5 flex justify-end items-center gap-2 relative">
-      <div className="w-auto aspect-square flex justify-center items-center absolute z-30 left-0 top-full md:top-4/5 xl:top-1">
+      {/* <div className="w-auto aspect-square flex justify-center items-center absolute z-30 left-0 top-full md:top-4/5 xl:top-1">
         <Link href="/">
           <Image src="/images/logo.png" alt="Shemaya Aqua (Pvt) Ltd." width={600} height={600} className="w-16 md:w-22 h-auto" />
         </Link>
-      </div>
+      </div> */}
       <div className="w-[80%] md:w-auto h-auto flex justify-end items-center gap-1">
         <form action="" className="w-full max-w-full h-auto flex justify-center items-center gap-2">
           <Input type="text" placeholder="Search" className="w-[300px] max-w-full md:w-[550px] lg:w-[450px] h-[30px] md:h-auto text-sm" />
