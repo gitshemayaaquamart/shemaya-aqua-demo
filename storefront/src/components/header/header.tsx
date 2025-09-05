@@ -2,10 +2,11 @@ import Image from "next/image";
 import VideoPreview from "./video-preview";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { Play } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="mx-auto w-full md:container md:max-w-screen h-[calc(100vh-60px)] max-h-[900px] min-h-[500px] box-border px-1 2xl:px-14">
+    <header className="mx-auto w-full md:container md:max-w-screen h-[calc(100vh-80px)] max-h-[900px] min-h-[500px] box-border px-1 2xl:px-14 relative">
       <div className="w-full h-full rounded-xl bg-[var(--primary)]/40 relative border-2 border-black">
         <div
           className="w-full xl:container mx-auto py-2 h-auto flex justify-start items-center xl:absolute xl:-top-12 xl:left-1/2 
@@ -40,6 +41,14 @@ export default function Header() {
             Explore
           </Button>
         </div>
+        <Button
+          variant="default"
+          size="lg"
+          className="mt-3 sm:mt-10 md:mt-16 text-sm md:text-lg px-4 h-10 md:px-8 md:h-12 absolute -bottom-2 
+        -right-2"
+        >
+          <Play size={20} fill="white" />
+        </Button>
       </div>
     </header>
   );
