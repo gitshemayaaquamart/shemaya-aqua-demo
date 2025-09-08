@@ -10,14 +10,14 @@ export default function OurProducts() {
       <PageTitle title="Explore our products" className="mb-16" />
       <ProductRow />
       <Image src="/images/bubbles.svg" alt="Bubbles" width={600} height={600} className="w-18 sm:w-22 h-auto absolute top-5 right-2 z-[-1]" />
-      <Image
+      {/* <Image
         src="/images/bubbles.svg"
         alt="Bubbles"
         width={600}
         height={600}
         className="w-18 sm:w-28 h-auto absolute -bottom-16 sm:-bottom-22 left-1/2 
       translate-x-[-50%] rotate-180 z-[-1]"
-      />
+      /> */}
       <div className="mt-14 w-full h-auto flex justify-end items-center">
         <Link
           href="/products"
