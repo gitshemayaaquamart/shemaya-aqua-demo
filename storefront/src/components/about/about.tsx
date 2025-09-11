@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="container mx-auto h-[50vh] relative overflow-visible box-border px-10 lg:px-22 my-22 sm:my-32">
+    <section className="container mx-auto min-h-[50vh] h-auto relative overflow-visible box-border px-10 lg:px-22 my-22 sm:my-32">
       <div
         className="absolute w-full h-auto top-1/2 left-1/2 -translate-x-1/2 translate-y-[-50%] flex justify-center items-center 
       pointer-events-none z-[-2] overflow-clip"
@@ -12,7 +12,7 @@ export default function About() {
           alt="Sri Lanka"
           width={600}
           height={600}
-          className="min-w-[230vw] sm:min-w-full xl:min-w-full min-h-auto xl:min-h-[800px] 2xl:min-h-[1000px] opacity-80"
+          className="min-w-[230vw] sm:min-w-full xl:min-w-full min-h-auto xl:min-h-[800px] 2xl:min-h-[1000px] opacity-50"
         ></Image>
       </div>
       <div className="w-full h-auto flex flex-col justify-center items-end mb-10 sm:mb-22 lg:mb-32">
@@ -28,7 +28,7 @@ export default function About() {
       </div>
       <div className="w-full h-auto flex flex-col justify-center items-end">
         <div className="w-full h-auto flex justify-start items-center mb-8">
-          <h1 className="text-4xl sm:text-6xl text-[var(--primary)]">Our Vision</h1>
+          <h1 className="text-4xl sm:text-6xl text-[var(--primary)]">Our Mission</h1>
         </div>
         <div className="w-full sm:w-4/5 md:w-3/5 h-auto flex justify-end items-center">
           <p className="text-right text-base">
