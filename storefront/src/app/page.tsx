@@ -3,6 +3,7 @@ import Header from "@/components/header/header";
 import Nav from "@/components/nav/Nav";
 import OurProducts from "@/components/products/our-products";
 import WhatsNew from "@/components/blogs/whats-new";
+import ContactForm from "@/components/contact/contact-form";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <OurProducts />
       <About />
       <WhatsNew />
+      <ContactForm />
     </>
   );
 }
