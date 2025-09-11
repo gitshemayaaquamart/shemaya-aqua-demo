@@ -4,6 +4,7 @@ import Nav from "@/components/nav/Nav";
 import OurProducts from "@/components/products/our-products";
 import WhatsNew from "@/components/blogs/whats-new";
 import ContactForm from "@/components/contact/contact-form";
+import Footer from "@/components/footer/footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <WhatsNew />
       <ContactForm />
+      <Footer />
     </>
   );
 }
