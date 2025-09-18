@@ -10,6 +10,13 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import PageTitle from "../page-title";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 const formSchema = z.object({
   first_name: z.string().min(1, "First name is required"),
@@ -50,13 +57,29 @@ export default function ContactForm() {
     }
   }
 
+  useGSAP(() => {
+    gsap.utils.toArray("[data-animate='scroll']").forEach((el) => {
+      gsap.from(el as HTMLElement, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el as HTMLElement,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    });
+  });
   return (
     <div className="container mx-auto my-32 px-2 box-border relative">
       <PageTitle title="Send us a message" className="mb-16 mx-auto" />
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto py-10 space-y-8">
           <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-6">
+            <div data-animate="scroll" className="col-span-6">
               <FormField
                 control={form.control}
                 name="first_name"
@@ -72,7 +95,7 @@ export default function ContactForm() {
               />
             </div>
 
-            <div className="col-span-6">
+            <div data-animate="scroll" className="col-span-6">
               <FormField
                 control={form.control}
                 name="last_name"
@@ -90,7 +113,7 @@ export default function ContactForm() {
           </div>
 
           <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-6">
+            <div data-animate="scroll" className="col-span-6">
               <FormField
                 control={form.control}
                 name="email"
@@ -106,7 +129,7 @@ export default function ContactForm() {
               />
             </div>
 
-            <div className="col-span-6">
+            <div data-animate="scroll" className="col-span-6">
               <FormField
                 control={form.control}
                 name="mobile"
@@ -123,33 +146,36 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <FormField
-            control={form.control}
-            name="title"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Title</FormLabel>
-                <FormControl>
-                  <Input placeholder="Title" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Message</FormLabel>
-                <FormControl>
-                  <Textarea placeholder="Message" className="resize-none" rows={6} {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div data-animate="scroll">
+            <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Title</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Title" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div data-animate="scroll">
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Message" className="resize-none" rows={6} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
           <Button type="submit" size={"default"}>
             Submit
