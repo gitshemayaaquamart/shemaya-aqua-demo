@@ -25,7 +25,7 @@ export default function Header() {
   }, []);
 
   useGSAP(() => {
-    let timeline = gsap.timeline();
+    const timeline = gsap.timeline();
     timeline.to(sliderUp.current, { opacity: 1, duration: 0 }, "<");
     timeline.to(sliderDown.current, { opacity: 1, duration: 0 }, "<");
     timeline.to(sliderUp.current, { width: "100vw", duration: 1 });
