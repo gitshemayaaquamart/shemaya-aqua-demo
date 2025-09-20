@@ -18,7 +18,7 @@ export default function About() {
 
   useGSAP(() => {
     gsap.from(visionTitle.current, {
-      y: 550,
+      y: 150,
       opacity: 0,
       duration: 1,
       ease: "power3.out",
@@ -42,7 +42,7 @@ export default function About() {
       },
     });
     gsap.from(missionTitle.current, {
-      y: 550,
+      y: 150,
       opacity: 0,
       duration: 1,
       ease: "power3.out",
